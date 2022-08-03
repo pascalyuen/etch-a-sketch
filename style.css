@@ -1,3 +1,21 @@
 container {
   display: flex;
 }
+
+div {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  height: 100px;
+  width: 100px;
+}
+
+.hovering {
+  background-color: black;
+}

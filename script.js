@@ -1,6 +1,9 @@
 const container = document.querySelector('.container');
 const button = document.querySelector('.button');
+const gridSizeDisplay = document.querySelector('.gridSizeDisplay');
 let num = 0;
+let width = 960 / 16;
+let height = 960 / 16;
 
 // Create a 16x16 grid of divs
 for (let i = 0; i < 16; i++) {
@@ -10,6 +13,8 @@ for (let i = 0; i < 16; i++) {
 
   for (let j = 0; j < 16; j++) {
     const col = document.createElement('div');
+    col.style.width = `${width}px`;
+    col.style.height = `${height}px`;
     col.classList.add('col');
     col.classList.add('grid');
     row.appendChild(col);
@@ -55,6 +60,10 @@ function removeOldGrid(e) {
 
 
 function makeNewGrid(e) {
+  width = 960 / num;
+  height = 960 / num;
+  gridSizeDisplay.textContent = `${num} x ${num}`;
+
   for (let i = 0; i < num; i++) {
     const row = document.createElement('div');
     row.classList.add('row');
@@ -62,6 +71,8 @@ function makeNewGrid(e) {
   
     for (let j = 0; j < num; j++) {
       const col = document.createElement('div');
+      col.style.width = `${width}px`;
+      col.style.height = `${height}px`;
       col.classList.add('col');
       col.classList.add('grid');
       row.appendChild(col);

@@ -39,7 +39,11 @@ function addGridHovering() {
 
 
 function enterEvent(e) {
-  e.target.classList.add('hovering');
+  let red = Math.floor(Math.random() * 255);
+  let green = Math.floor(Math.random() * 255);
+  let blue = Math.floor(Math.random() * 255);
+
+  e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 }
 
 
